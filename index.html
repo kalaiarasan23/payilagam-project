@@ -9,41 +9,45 @@
 
 </head>
 <body>
-<header>
-  <div class="logo">
-    <a href="https://seo.payilagam.com/">
-      <img src="image/home_title.jpg" alt="payilagam">
-    </a>
-  </div>
-    
-    <!-- Horizontal Navigation Bar -->
-  <nav>
-    <ul class="menu">
-      <li><a href="#">Home</a></li>
-      <li class="dropdown"><a href="#">Courses ⌄</a>
-        <ul class="submenu">
-          <li><a href="#">Web Development</a>
-            <ul class="submenu">
-              <li><a href="#">HTML</a></li>
-              <li><a href="#">CSS</a></li>
-              <li><a href="#">JavaScript</a></li>
-            </ul>
-          </li>
-          
-          <li><a href="#">Java</a>
-            <ul class="submenu">
-              <li><a href="#">Core Java</a></li>
-              <li><a href="#">Spring Boot</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+ <header>
+    <div class="logo">
+      <a href="https://seo.payilagam.com/">
+        <img src="image/home_title.jpg" alt="payilagam" />
+      </a>
+    </div>
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+    <nav id="main-nav" class="nav">
+      <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Courses</a>
+          <ul class="submenu">
+            <li class="dropdown">
+              <a href="#">Trending Courses</a>
+              <ul class="submenu">
+                <li><a href="#">Full Stack Training</a></li>
+                <li><a href="#">Android Training</a></li>
+                <li><a href="#">Front End Training</a></li>
+                <li><a href="#">Data Science Training</a></li>
+                <li><a href="#">Data Analytics Training</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Core Java Training</a></li>
+            <li><a href="#">Spring Boot Training</a></li>
+            <li><a href="#">Python Training</a></li>
+            <li><a href="#">SQL Training</a></li>
+            <li><a href="#">Django Training</a></li>
+            <li><a href="#">React Training</a></li>
+            <li><a href="#">HTML & CSS Training</a></li>
+            <li><a href="#">Javascript Training</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
 <!-- section 1 -->
 <section class="section_1">
@@ -292,22 +296,29 @@
 
 <!-- section 5 video success -->
 <section>
- <div class="Build-header2">
-    <h2>Success Stories</h2>
-</div>
-<div class="video-container">
+  <div class="build-header2">
+    <h2 class="success-heading">Success Stories</h2>
+  </div>
+
+  <div class="video-container">
     <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/-yo4MfjrCwM"
-        frameborder="0" allowfullscreen></iframe>
+      <iframe
+        src="https://www.youtube.com/embed/-yo4MfjrCwM"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
     </div>
 
     <div class="video-wrapper">
-        <iframe width="200" height="355"
+      <iframe
         src="https://www.youtube.com/embed/ZZ7bt4HTr2Y"
-        frameborder="0" allowfullscreen></iframe>
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
     </div>
-</div>
+  </div>
 </section>
+
 
 <!-- section 6 video grouping -->
 <section> 
@@ -317,28 +328,34 @@
  </div>
 
 
-  <div class="video-section">
-    <button class="scroll-button scroll-left" onclick="scrollVideos(-1)">‹</button>
+  <div class="video-section1">
+    <button class="scroll-button1 left" onclick="scrollVideos(-1)">
+      <i class="fas fa-chevron-left"></i>
+    </button>
 
-    <div class="video-container" id="videoContainer">
-      <div class="video-item">
-        <iframe src="https://www.youtube.com/embed/-UnHzI4Fshg?si=C-JNpqOB4SeVoced" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-wrapper1" id="videoContainer1">
+      <div class="video-card1">
+        <!-- <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe> -->
+        <iframe src="https://www.youtube.com/embed/-UnHzI4Fshg?si=JWK8raMcktZOQNXd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
-      <div class="video-item">
-        <iframe src="https://www.youtube.com/embed/n16ycHJQ3FU?si=J1OIJ9Ao-rafzHTE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="video-card1">
+        <iframe src="https://www.youtube.com/embed/n16ycHJQ3FU?si=_Iv7wWEDrbMZx_Qd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <!-- <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe> -->
       </div>
-      <div class="video-item">
-        <iframe src="https://www.youtube.com/embed/vq7eTSapdv0?si=o2lgvP4VL6fAbPj4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="video-card1">
+        <iframe src="https://www.youtube.com/embed/oHg5SJYRHA0" allowfullscreen></iframe>
       </div>
-      <div class="video-item">
-        <iframe src="https://www.youtube.com/embed/OpxAr3UYlP8?si=S0XDDkZ2kjVOtMBm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="video-card1">
+        <iframe src="https://www.youtube.com/embed/oHg5SJYRHA0" allowfullscreen></iframe>
       </div>
-      <div class="video-item">
-        <iframe src="https://www.youtube.com/embed/LT_UXZIEtoI?si=uXN_70BM9fR86Si5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="video-card1">
+        <iframe src="https://www.youtube.com/embed/oHg5SJYRHA0" allowfullscreen></iframe>
       </div>
     </div>
 
-    <button class="scroll-button scroll-right" onclick="scrollVideos(1)">›</button>
+    <button class="scroll-button1 right" onclick="scrollVideos(1)">
+      <i class="fas fa-chevron-right"></i>
+    </button>
   </div>
 
 </section>

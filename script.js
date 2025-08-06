@@ -1,14 +1,34 @@
-   function scrollVideos(direction) {
-      const container = document.getElementById("videoContainer");
-      const scrollAmount = container.offsetWidth * 0.8; // Scroll 80% of container width
-      container.scrollBy({
-        left: direction * scrollAmount,
-        behavior: "smooth"
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('main-nav');
+
+    // Toggle main nav open/close
+    toggleBtn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+
+    // Mobile submenu toggle (open & close on re-click)
+    document.querySelectorAll('.dropdown > a').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const parent = anchor.parentElement;
+
+          parent.classList.toggle('open');
+        }
       });
-    }   
+    });
+});   
    
-   
-       const sidebarHeadings = document.querySelectorAll(".sidebar-heading");
+// section 6
+ function scrollVideos(direction) {
+      const container = document.getElementById("videoContainer1");
+      const scrollAmount = container.clientWidth;
+      container.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
+    }
+
+// section 8   
+    const sidebarHeadings = document.querySelectorAll(".sidebar-heading");
     const mainContent = document.getElementById("main-content");
 
     const sectionData = {
