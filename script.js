@@ -1,3 +1,14 @@
+   function scrollVideos(direction) {
+      const container = document.getElementById("videoContainer");
+      const scrollAmount = container.offsetWidth * 0.8; // Scroll 80% of container width
+      container.scrollBy({
+        left: direction * scrollAmount,
+        behavior: "smooth"
+      });
+    }   
+   
+   
+   
     const sidebarHeadings = document.querySelectorAll(".sidebar-heading");
     const mainContent = document.getElementById("main-content");
 
