@@ -8,8 +8,7 @@
     }   
    
    
-   
-    const sidebarHeadings = document.querySelectorAll(".sidebar-heading");
+       const sidebarHeadings = document.querySelectorAll(".sidebar-heading");
     const mainContent = document.getElementById("main-content");
 
     const sectionData = {
@@ -17,19 +16,19 @@
         title: "",
         items: [
           {
-            heading: "What kind of projects a trainee will do in the Course?",
+            heading: "How do I get enrolled in a Course in Payilagam?",
             paragraph:
-              "We believe in Projects based training. In each phase of the course, trainees will get involved in Mini Projects and Projects. Main goal of these projects is to apply what they learnt in different domains and technologies."
+              "It is very simple. Visit our website, go through all the courses, select the one which suits best for your career path, Fill the Enquiry form. Want to get swift reply? A quick call / whatsapp to our Career Councillor is also an easy way for enrollment."
           },
           {
-            heading: "Are the projects Individual or Team Based?",
+            heading: "What are the Prerequisites for Full Stack Java, Full Stack Python and React Courses?",
             paragraph:
-              "It is of both, Individual and Team Based. Individual Projects are for show casing your expertise where as Team Based Projects are for Sharing your knowledge, getting ideas from others, to make you ready for real IT environment."
+              "No prerequisite is needed. Our courses will be in Mother Tongue and are well tailored to meet the requirements from the basics. Thus anyone with interest can reach good heights."
           },
           {
-            heading: "How can one show these projects?",
+            heading: "Shall I ask for a Free Demo session before enrolling for the course?",
             paragraph:
-              "We train them git, Version Control System and ask the trainees to push code regularly in git. All Web based Projects will be hosted here, Thus Trainees can show these projects everywhere, including Interviews."
+              "Yes, we encourage every trainee to have a 1:1 session with the trainer before joining. Knowing in advance, How the session will be conducted is good for Trainees."
           },
           {
             heading: "Will there be any registration fee for the course?",
@@ -121,46 +120,57 @@
       }
     };
 
-    sidebarHeadings.forEach((heading) => {
-      heading.addEventListener("click", () => {
-        const sectionId = heading.getAttribute("data-section");
-        const section = sectionData[sectionId];
+sidebarHeadings.forEach((heading) => {
+  heading.addEventListener("click", () => {
+    // Remove 'active' from all headings
+    sidebarHeadings.forEach((h) => h.classList.remove("active"));
 
-        // Clear and rebuild the content
-        mainContent.innerHTML = `<h2>${section.title}</h2>`;
+    // Add 'active' to clicked one
+    heading.classList.add("active");
 
-        section.items.forEach((item, index) => {
-          const subSection = document.createElement("div");
-          subSection.className = "sub-section";
+    const sectionId = heading.getAttribute("data-section");
+    const section = sectionData[sectionId];
 
-          const mainHeading = document.createElement("div");
-          mainHeading.className = "main-heading";
-          mainHeading.textContent = item.heading;
+    // Clear and rebuild the content
+    mainContent.innerHTML = `<h2>${section.title}</h2>`;
 
-          const content = document.createElement("div");
-          content.className = "content";
-          content.innerHTML = `<p>${item.paragraph}</p>`;
+    section.items.forEach((item, index) => {
+      const subSection = document.createElement("div");
+      subSection.className = "sub-section";
 
-          mainHeading.addEventListener("click", () => {
-            // Close all open paragraphs first
-            document.querySelectorAll(".content.show").forEach(el => {
-              el.classList.remove("show");
-            });
+      const mainHeading = document.createElement("div");
+      mainHeading.className = "main-heading";
+      mainHeading.textContent = item.heading;
 
-            // Toggle only the clicked one
-            content.classList.toggle("show");
-          });
+      const content = document.createElement("div");
+      content.className = "content";
+      content.innerHTML = `<p>${item.paragraph}</p>`;
 
-          subSection.appendChild(mainHeading);
-          subSection.appendChild(content);
-          mainContent.appendChild(subSection);
+      mainHeading.addEventListener("click", () => {
+        const isAlreadyOpen = content.classList.contains("show");
 
-          if (index === 0) {
-            content.classList.add("show");
-          }
+        // Close all open paragraphs
+        document.querySelectorAll(".content.show").forEach(el => {
+          el.classList.remove("show");
         });
+
+        // Only toggle if it wasn't already open
+        if (!isAlreadyOpen) {
+          content.classList.add("show");
+        }
       });
+
+      subSection.appendChild(mainHeading);
+      subSection.appendChild(content);
+      mainContent.appendChild(subSection);
+
+      if (index === 0) {
+        content.classList.add("show");
+      }
     });
+  });
+});
+
 
     // Trigger the first section by default
     sidebarHeadings[0].click();
